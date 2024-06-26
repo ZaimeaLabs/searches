@@ -1,0 +1,7 @@
+/vendor
+composer.lock
+/phpunit.xml
+/psalm.xml
+/testbench.yaml
+/.phpunit.cache
+.phpunit.result.cache
