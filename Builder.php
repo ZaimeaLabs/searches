@@ -506,7 +506,7 @@ class Builder
      */
     private function addWhereTermsToQuery(EloquentBuilder $query, $column): void
     {
-        $column = $this->ignoreCase ? (new MySqlGrammar)->wrap($column) : $column;
+        $column = $this->ignoreCase ? (new MySqlGrammar($query->getConnection()))->wrap($column) : $column;
 
         $this->terms->each(function ($term) use ($query, $column) {
             $this->ignoreCase
@@ -533,8 +533,9 @@ class Builder
         }
 
         $expressionsAndBindings = $searchThrough->getQualifiedColumns()->flatMap(function ($field) use ($searchThrough) {
-            $prefix = $searchThrough->getModel()->getConnection()->getTablePrefix();
-            $field = (new MySqlGrammar)->wrap($prefix . $field);
+            $connection = $searchThrough->getModel()->getConnection();
+            $prefix = $connection->getTablePrefix();
+            $field = (new MySqlGrammar($connection))->wrap($prefix . $field);
 
             return $this->termsWithoutWildcards->map(function ($term) use ($field) {
                 return [
