@@ -13,7 +13,7 @@ class SearchesServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('searches', function () {
             return new Searches;
