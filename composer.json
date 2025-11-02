@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Zaimea\\Searches\\": ""
+            "Zaimea\\Searches\\": "src/"
         }
     },
     "autoload-dev": {
