@@ -237,11 +237,11 @@ class SearchThrough
     /**
      * Clone the current instance.
      *
-     * @return static
+     * @return self
      */
-    public function clone(): static
+    public function clone(): self
     {
-        return new static($this->builder, $this->columns, $this->orderByColumn, $this->key, $this->fullText, $this->fullTextOptions, $this->fullTextRelation);
+        return new self($this->builder, $this->columns, $this->orderByColumn, $this->key, $this->fullText, $this->fullTextOptions, $this->fullTextRelation);
     }
 
     /**

@@ -16,6 +16,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Conditionable;
+use Zaimea\Searches\Exceptions\RelevanceException;
 use Zaimea\Searches\SearchThrough;
 
 class Builder

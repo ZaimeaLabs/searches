@@ -15,7 +15,7 @@ use Tests\Fixtures\Post;
 use Tests\Fixtures\Video;
 use Tests\Fixtures\VideoJson;
 use Zaimea\Searches\Builder;
-use Zaimea\Searches\RelevanceException;
+use Zaimea\Searches\Exceptions\RelevanceException;
 use Zaimea\Searches\Search;
 
 class SearchesTest extends TestCase
