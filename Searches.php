@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ZaimeaLabs\Searches;
+namespace Zaimea\Searches;
 
 use Illuminate\Support\Traits\ForwardsCalls;
 
@@ -13,7 +13,7 @@ class Searches
     /**
      * Returns a new Builder instance.
      *
-     * @return \ZaimeaLabs\Searches\Builder
+     * @return \Zaimea\Searches\Builder
      */
     public function new(): Builder
     {

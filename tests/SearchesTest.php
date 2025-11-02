@@ -14,9 +14,9 @@ use Tests\Fixtures\Page;
 use Tests\Fixtures\Post;
 use Tests\Fixtures\Video;
 use Tests\Fixtures\VideoJson;
-use ZaimeaLabs\Searches\Builder;
-use ZaimeaLabs\Searches\RelevanceException;
-use ZaimeaLabs\Searches\Search;
+use Zaimea\Searches\Builder;
+use Zaimea\Searches\RelevanceException;
+use Zaimea\Searches\Search;
 
 class SearchesTest extends TestCase
 {
@@ -420,7 +420,7 @@ class SearchesTest extends TestCase
             ->in(Post::class, ['title'])
             ->in(Video::class, ['title'])
             ->in(Comment::class, ['body'])
-            ->orderByModel(Comment::class)
+            ->orderByModel([Comment::class])
             ->search('foo');
 
         $this->assertInstanceOf(Comment::class, $results->get(0));

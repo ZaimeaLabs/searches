@@ -1,14 +1,10 @@
+<p align="center"><img width="337" height="66" src="/.github/searches.svg" alt="Searches"></p>
+
 <p align="center">
-  <a href="https://zaimea.com/" target="_blank">
-    <img src=".github/searches.svg" alt="Searches" width="300">
-  </a>
-</p>
-<p align="center">
-  Generate pdf in your application.
-<p>
-<p align="center">
-    <a href="https://github.com/zaimealabs/searches/actions/workflows/searches-tests.yml"><img src="https://github.com/zaimealabs/searches/actions/workflows/searches-tests.yml/badge.svg" alt="Searches Tests"></a>
-    <a href="https://github.com/zaimealabs/searches/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Mit-brightgreen.svg" alt="License"></a>
+    <a href="https://github.com/zaimealabs/searches/actions"><img src="https://github.com/zaimealabs/searches/actions/workflows/searches-tests.yml/badge.svg" alt="Build Status"></a>
+    <a href="https://packagist.org/packages/zaimea/searches"><img src="https://img.shields.io/packagist/dt/zaimea/searches" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/zaimea/searches"><img src="https://img.shields.io/packagist/v/zaimea/searches" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/zaimea/searches"><img src="https://img.shields.io/packagist/l/zaimea/searches" alt="License"></a>
 </p>
 <div align="center">
   Hey 👋 thanks for considering making a donation, with these donations I can continue working to contribute to ZaimeaLabs projects.
@@ -16,67 +12,33 @@
   [![Donate](https://img.shields.io/badge/Via_PayPal-blue)](https://www.paypal.com/donate/?hosted_button_id=V6YPST5PUAUKS)
 </div>
 
-## Usage
-```php
-    use ZaimeaLabs\Searches\Search;
+## Introduction
 
-    $results = Search::in(User::class, 'name')
-        ->search('Custura');
-```
+Searches is a powerful, expressive, and lightweight Laravel package designed to make advanced full-text–style searching effortless.
+The package allows you to search across models, multiple columns, relationships, eager-loaded data, and even multiple models in a single query.
 
-Use `->when()`
-```php
-    Search::new()
-        ->when($user->isAdmin(), fn($search) => $search->in(User::class, 'name'))
-        ->search('Custura');
-```
+It supports relevance sorting, multi-word queries, conditional search rules, pagination, and more—making it perfect for building robust search features in modern Laravel applications.
 
-Multiple column
-```php
-    Search::in(User::class, ['name', 'username'])
-        ->search('Custura');
-```
+## Official Documentation
 
-Search through relationships
-```php
-    Search::in(User::class, ['posts.title'])
-        ->search('laravel');
-```
+Documentation for Socialite-Extender can be found on the [Zaimea website](https://zaimea.com/docs/searches).
 
-Eager load relationships
-```php
-    Search::in(Post::with('comments'), 'title')
-        ->in(Video::with('likes'), 'title')
-        ->search('laravel');
-```
+## Contributing
 
-Multi-words 
-```php 
-    use ZaimeaLabs\Searches\Search;
+Thank you for considering contributing to Socialite-Extender! The contribution guide can be found in the [Zaimea documentation](https://zaimea.com/docs/open-source/contributions).
 
-    Search::in(Blog::class, 'title')
-        ->in(Video::class, 'title')
-        ->search('"laravel livewire alpine"');
-```
+## Code of Conduct
 
-Sorting
-```php
-    ->orderByDesc()
-```
-```php
-    ->orderByRelevance()
-```
-```php
-    ->orderByModel([Post::class, Video::class,])
-```
+To ensure that the Zaimea open-source ecosystem remains welcoming and respectful, please review and follow our [Code of Conduct](https://zaimea.com/docs/open-source/contributions#code-of-conduct).
 
-Paginate
-```php
-    ->paginate()
-    
-    ->paginate($perPage = 10, $pageName = 'page', $page = 1)
-    # OR
-    ->simplePaginate()
-    
-    ->simplePaginate($perPage = 10, $pageName = 'page', $page = 1)
-```
+## Security Vulnerabilities
+
+Please review [our security policy](https://github.com/zaimealabs/searches/security/policy) on how to report security vulnerabilities.
+
+## Support
+
+For issues or suggestions: [GitHub Issues](https://github.com/zaimealabs/searches/issues)
+
+## License
+
+Searches is open-sourced software licensed under the [MIT license](LICENSE.md).

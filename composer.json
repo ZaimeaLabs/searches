@@ -1,11 +1,17 @@
 {
-    "name": "zaimealabs/searches",
+    "name": "zaimea/searches",
     "license": "MIT",
     "homepage": "https://zaimea.com",
-    "description": "The ZaimeaLabs Searches package.",
+    "description": "Searches is a powerful, expressive, and lightweight Laravel package designed to make advanced full-text–style searching effortless.",
     "keywords": [
         "laravel",
         "searches",
+        "search",
+        "fulltext",
+        "filter",
+        "query",
+        "eloquent",
+        "zaimea",
         "zaimealabs"
     ],
     "authors": [
@@ -15,17 +21,18 @@
         }
     ],
     "require": {
-        "php": "^8.2|^8.3|^8.4",
-        "illuminate/support": "^10.0|^11.0|^12.0"
+        "php": "^8.2",
+        "illuminate/support": "^12.0"
     },
     "require-dev": {
-        "mockery/mockery": "^1.4.4",
-        "orchestra/testbench": "^8.0|^9.0|^10.0",
-        "pestphp/pest": "^2.0|^3.0"
+        "orchestra/testbench": "^10.0",
+        "phpstan/phpstan": "^1.12.23",
+        "pestphp/pest": "^3.0",
+        "mockery/mockery": "^1.4.4"
     },
     "autoload": {
         "psr-4": {
-            "ZaimeaLabs\\Searches\\": ""
+            "Zaimea\\Searches\\": ""
         }
     },
     "autoload-dev": {
@@ -36,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ZaimeaLabs\\Searches\\SearchesServiceProvider"
+                "Zaimea\\Searches\\SearchesServiceProvider"
             ]
         },
         "branch-alias": {

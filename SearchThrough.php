@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ZaimeaLabs\Searches;
+namespace Zaimea\Searches;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -69,7 +69,7 @@ class SearchThrough
      * @param array   $fullTextOptions
      * @param string  $fullTextRelation
      */
-    public function __construct(Builder $builder, Collection $columns, string $orderByColumn, int $key, bool $fullText = false, array $fullTextOptions = [], string $fullTextRelation = null)
+    public function __construct(Builder $builder, Collection $columns, string $orderByColumn, int $key, bool $fullText = false, array $fullTextOptions = [], string $fullTextRelation = '')
     {
         $this->builder          = $builder;
         $this->columns          = $columns;

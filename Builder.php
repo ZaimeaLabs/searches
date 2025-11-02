@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ZaimeaLabs\Searches;
+namespace Zaimea\Searches;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
@@ -16,7 +16,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Conditionable;
-use ZaimeaLabs\Searches\SearchThrough;
+use Zaimea\Searches\SearchThrough;
 
 class Builder
 {
@@ -211,7 +211,7 @@ class Builder
      * @param  string  $orderByColumn
      * @return self
      */
-    public function in($query, $columns = null, string $orderByColumn = null): self
+    public function in($query, $columns = null, string $orderByColumn = ''): self
     {
         /** @var EloquentBuilder $builder */
         $builder = is_string($query) ? $query::query() : $query;
@@ -260,7 +260,7 @@ class Builder
      * @param  string  $orderByColumn
      * @return self
      */
-    public function modelFullText($query, $columns = null, array $options = [], string $orderByColumn = null): self
+    public function modelFullText($query, $columns = null, array $options = [], string $orderByColumn = ''): self
     {
         $builder = is_string($query) ? $query::query() : $query;
 
@@ -386,7 +386,7 @@ class Builder
      * @param  callable $callback
      * @return \Illuminate\Support\Collection
      */
-    public function parseTerms(string $terms, callable $callback = null): Collection
+    public function parseTerms(string $terms, callable $callback = ''): Collection
     {
         $callback = $callback ?: fn () => null;
 
@@ -433,7 +433,7 @@ class Builder
      * each search term.
      *
      * @param  \Illuminate\Database\Eloquent\Builder $builder
-     * @param  \ZaimeaLabs\Searches\SearchThrough      $searchThrough
+     * @param  \Zaimea\Searches\SearchThrough      $searchThrough
      * @return void
      */
     public function addSearchQueryToBuilder(EloquentBuilder $builder, SearchThrough $searchThrough): void
@@ -519,7 +519,7 @@ class Builder
      * Adds a word count so we can order by relevance.
      *
      * @param  \Illuminate\Database\Eloquent\Builder $builder
-     * @param  \ZaimeaLabs\Searches\SearchThrough      $searchThrough
+     * @param  \Zaimea\Searches\SearchThrough      $searchThrough
      * @return void
      */
     private function addRelevanceQueryToBuilder($builder, $searchThrough): void
@@ -555,7 +555,7 @@ class Builder
      * Builds an array with all qualified columns for
      * both the ids and ordering.
      *
-     * @param  \ZaimeaLabs\Searches\SearchThrough $currentModel
+     * @param  \Zaimea\Searches\SearchThrough $currentModel
      * @return array
      */
     protected function makeSelects(SearchThrough $currentModel): array
@@ -715,7 +715,7 @@ class Builder
      * @param  string  $terms
      * @return integer
      */
-    public function count(string $terms = null): int
+    public function count(string $terms = ''): int
     {
         $this->initializeTerms($terms ?: '');
 
@@ -730,7 +730,7 @@ class Builder
      * @param  string $terms
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Contracts\Pagination\LengthAwarePaginator|\Illuminate\Pagination\Paginator
      */
-    public function search(string $terms = null): Collection|LengthAwarePaginator|Paginator
+    public function search(string $terms = ''): Collection|LengthAwarePaginator|Paginator
     {
         $this->initializeTerms($terms ?: '');
 

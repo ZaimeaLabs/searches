@@ -11,14 +11,14 @@ on:
 jobs:
   tests:
     env:
-      COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ secrets.COMPOSER_AUTH }}"}}'
+      COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ secrets.GITHUB_TOKEN  }}"}}'
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: true
       matrix:
         php: [8.4, 8.3, 8.2]
-        laravel: [10.*, 11.*, 12.*]
+        laravel: [12.*]
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
