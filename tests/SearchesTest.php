@@ -80,7 +80,7 @@ class SearchesTest extends TestCase
 
     public function test_it_respects_table_prefixes()
     {
-        $this->initDatabase('prefix');
+        $this->initDatabase('prefix_');
 
         $postA  = Post::create(['title' => 'foo']);
         $postB  = Post::create(['title' => 'bar']);
