@@ -1,5 +1,5 @@
 parameters:
   paths:
-    -
+    - .
 
   level: 0
