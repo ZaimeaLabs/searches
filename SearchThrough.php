@@ -69,7 +69,7 @@ class SearchThrough
      * @param array   $fullTextOptions
      * @param string  $fullTextRelation
      */
-    public function __construct(Builder $builder, Collection $columns, string $orderByColumn, int $key, bool $fullText = false, array $fullTextOptions = [], string $fullTextRelation = '')
+    public function __construct(Builder $builder, Collection $columns, string $orderByColumn, int $key, bool $fullText = false, array $fullTextOptions = [], ?string $fullTextRelation = null)
     {
         $this->builder          = $builder;
         $this->columns          = $columns;

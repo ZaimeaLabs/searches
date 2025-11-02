@@ -211,7 +211,7 @@ class Builder
      * @param  string  $orderByColumn
      * @return self
      */
-    public function in($query, $columns = null, string $orderByColumn = ''): self
+    public function in($query, $columns = null, ?string $orderByColumn = null): self
     {
         /** @var EloquentBuilder $builder */
         $builder = is_string($query) ? $query::query() : $query;
@@ -260,7 +260,7 @@ class Builder
      * @param  string  $orderByColumn
      * @return self
      */
-    public function modelFullText($query, $columns = null, array $options = [], string $orderByColumn = ''): self
+    public function modelFullText($query, $columns = null, array $options = [], ?string $orderByColumn = null): self
     {
         $builder = is_string($query) ? $query::query() : $query;
 
@@ -386,7 +386,7 @@ class Builder
      * @param  callable $callback
      * @return \Illuminate\Support\Collection
      */
-    public function parseTerms(string $terms, callable $callback = ''): Collection
+    public function parseTerms(string $terms, ?callable $callback = null): Collection
     {
         $callback = $callback ?: fn () => null;
 
@@ -715,7 +715,7 @@ class Builder
      * @param  string  $terms
      * @return integer
      */
-    public function count(string $terms = ''): int
+    public function count(?string $terms = null): int
     {
         $this->initializeTerms($terms ?: '');
 
@@ -730,7 +730,7 @@ class Builder
      * @param  string $terms
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Contracts\Pagination\LengthAwarePaginator|\Illuminate\Pagination\Paginator
      */
-    public function search(string $terms = ''): Collection|LengthAwarePaginator|Paginator
+    public function search(?string $terms = null): Collection|LengthAwarePaginator|Paginator
     {
         $this->initializeTerms($terms ?: '');
 
