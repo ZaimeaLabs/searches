@@ -41,4 +41,4 @@ For issues or suggestions: [GitHub Issues](https://github.com/zaimealabs/searche
 
 ## License
 
-Searches is open-sourced software licensed under the [MIT license](LICENSE.md).
+Searches is open-sourced software licensed under the [MIT license](LICENSE).
