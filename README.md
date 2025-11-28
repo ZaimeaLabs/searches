@@ -1,7 +1,7 @@
 <p align="center"><img width="337" height="66" src="/.github/searches.svg" alt="Searches"></p>
 
 <p align="center">
-    <a href="https://github.com/zaimealabs/searches/actions"><img src="https://github.com/zaimealabs/searches/actions/workflows/searches-tests.yml/badge.svg" alt="Build Status"></a>
+    <a href="https://github.com/zaimealabs/searches/actions"><img src="https://github.com/zaimealabs/searches/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
     <a href="https://packagist.org/packages/zaimea/searches"><img src="https://img.shields.io/packagist/dt/zaimea/searches" alt="Total Downloads"></a>
     <a href="https://packagist.org/packages/zaimea/searches"><img src="https://img.shields.io/packagist/v/zaimea/searches" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/zaimea/searches"><img src="https://img.shields.io/packagist/l/zaimea/searches" alt="License"></a>
